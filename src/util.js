@@ -434,5 +434,7 @@ ret.nodeSupportsAsyncResource = ret.isNode && (function() {
 
 if (ret.isNode) ret.toFastProperties(process);
 
+// TODO(thlorenz): (longStackTraces) this is initialized during snapshotting and thus
+// the error has no stack`
 try {throw new Error(); } catch (e) {ret.lastLineError = e;}
 module.exports = ret;

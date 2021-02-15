@@ -776,6 +776,8 @@ function parseLineInfo(line) {
 
 function setBounds(firstLineError, lastLineError) {
     if (!longStackTracesIsSupported()) return;
+    // TODO(thlorenz): (longStackTraces) this does not work when shapshotted as
+    // the `stack` is never set (@see ./async.js, ./util.js)
     var firstStackLines = (firstLineError.stack || "").split("\n");
     var lastStackLines = (lastLineError.stack || "").split("\n");
     var firstIndex = -1;

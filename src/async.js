@@ -1,4 +1,6 @@
 "use strict";
+// TODO(thlorenz): (longStackTraces) this is initialized during snapshotting and thus
+// the error has no stack`
 var firstLineError;
 try {throw new Error(); } catch (e) {firstLineError = e;}
 var ASSERT = require("./assert");
